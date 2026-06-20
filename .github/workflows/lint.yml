@@ -1,6 +1,6 @@
 # What is the goal of your workflow
 
-# Goal: Whenever someone changes the python code, the linter will check if the syntax, format is correct or not
+# Goal: Whenever someone changes the python code, the linter will check if the syntax, format or identation is correct or not
 
 name: Auto Linter
 
@@ -14,4 +14,8 @@ jobs:
     steps:
       - name: Checkout/clone the code
         uses: actions/checkout@v4
+
+      # This step will install the a Python Linting tool
+      - name: Install Linter tool
+        run: pip install ruff
       
